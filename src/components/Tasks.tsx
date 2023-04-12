@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import './Tasks.scss';
+import { TaskItem } from './TaskItem';
 
 type Props = {};
 
-type Task = {
+export type Task = {
   id: string;
   description: string;
   isCompleted: boolean;
@@ -36,9 +37,9 @@ export function Tasks(props: Props) {
         <div className="task-list">
           {tasks
             .filter((task) => !task.isCompleted)
-            .map((task) => {
-              return <div>task</div>;
-            })}
+            .map((task) => (
+              <TaskItem task={task} />
+            ))}
         </div>
       </div>
 
@@ -47,9 +48,9 @@ export function Tasks(props: Props) {
         <div className="task-list">
           {tasks
             .filter((task) => task.isCompleted)
-            .map((task) => {
-              return <div>task</div>;
-            })}
+            .map((task) => (
+              <TaskItem task={task} />
+            ))}
         </div>
       </div>
     </div>
