@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import './App.css';
-
-function App() {
+function App(): JSX.Element {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
@@ -19,7 +17,7 @@ function App() {
     fetchTasks();
   }, []);
 
-  return <div className="App">{tasks}</div>;
+  return <div className="App">teste</div>;
 }
 
 export default App;
